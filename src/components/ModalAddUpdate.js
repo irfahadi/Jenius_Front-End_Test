@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { fetchContact } from '../features/contact/contactSlices';
 
 export default function ModalAddUpdate(props) {
 const initForm = { id: null, 
@@ -33,31 +34,62 @@ if(e.target.name==='age'){
 }         
 setContact(updateChange)
 }
-const handleOnSubmit = e => {
+
+async function addContact(){
+    return await axios({
+        data:{
+            firstName: Contact.firstName,
+            lastName: Contact.lastName,
+            age: Contact.age,
+            photo: 'N/A'
+        },
+        url: `https://simple-contact-crud.herokuapp.com/contact`,
+        method: "post",
+       
+    })
+      .then(()=>{
+            setLoading(false)
+            return dispatch(fetchContact()) 
+        })
+      .catch((err) => {
+            setLoading(false)
+            return console.error(err)
+        });
+  }
+
+  async function updateContact(){
+    return await axios({
+        data:{
+            firstName: Contact.firstName,
+            lastName: Contact.lastName,
+            age: Contact.age,
+            photo: Contact.photo
+        },
+        url: `https://simple-contact-crud.herokuapp.com/contact/${Contact.id}`,
+        method: "put",
+        
+    })
+    
+    .then(()=>{
+        setLoading(false)
+        return dispatch(fetchContact())
+    })
+    .catch((err) => {
+        setLoading(false)
+        return console.error(err)
+    });
+  }
+
+const handleOnSubmit = async e => {
 setLoading(true)
 e.preventDefault();
     const { name, value } = e.target;
    setContact({...Contact, [name]:value});
 if(isedit){
-    // await updateContact()
-    dispatch(
-      contactUpdated({
-            firstName: Contact.firstName,
-            lastName: Contact.lastName,
-            age: Contact.age,
-            photo: Contact.photo
-      })
-    )
+    await updateContact()
+    
 }else{
-    // await addContact()
-    dispatch(
-      contactAdded({
-            firstName: Contact.firstName,
-            lastName: Contact.lastName,
-            age: Contact.age,
-            photo: Contact.photo
-      })
-    )
+    await addContact()
 }
 props.showModal(false);
 }

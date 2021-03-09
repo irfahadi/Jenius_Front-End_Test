@@ -6,30 +6,24 @@ export default function ModalDelete(props) {
   console.log(props)
   const [Loading, setLoading] = useState(false)
 
-  function deleteCart() {
+  async function deleteCart() {
     setLoading(true)
-    // return await axios({
-    //   url: `https://cors-anywhere.herokuapp.com/https://simple-contact-crud.herokuapp.com/contact/${props.id}`,
-    //   method: "delete",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     'Access-Control-Allow-Origin': '*'
-    //     },
-    // })
-    //   .then(()=>{
-    //     setLoading(false)
-    //     return props.close()
-    //   })
-    //   .catch((err) => {
-    //     setLoading(false)
-    //     return props.close()});
-    dispatch(
-      contactDelete({
-            firstName: props.name
+    return await axios({
+      url: `https://simple-contact-crud.herokuapp.com/contact/${props.id}`,
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*'
+        },
+    })
+      .then(()=>{
+        setLoading(false)
+        return props.close()
       })
-    )
-    setLoading(false)
-    return props.close()
+      .catch((err) => {
+        console.log(err)
+        setLoading(false)
+        return props.close()});
   }
 
   return (
