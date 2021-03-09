@@ -49,7 +49,7 @@ async function addContact(){
         })
       .catch((err) => {
             setLoading(false)
-            return console.error(err)
+            return alert(err)
         });
   }
 
@@ -72,7 +72,7 @@ async function addContact(){
     })
     .catch((err) => {
         setLoading(false)
-        return console.error(err)
+        return alert(err)
     });
   }
 

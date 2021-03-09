@@ -1,6 +1,6 @@
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       colors:{
@@ -9,7 +9,9 @@ module.exports = {
         'btn-add' : '#109CF1',
         'btn-edit' : '#FFB946',
         'btn-delete' : '#F7685B',
-        'item' : '#334D6E'
+        'dk-background' : '#334D6E',
+        'dk-nav' : '#90A0B7',
+        'dk-table' : '#C2CFE0',
       }
     },
   },

@@ -20,7 +20,7 @@ export default function ModalDelete(props) {
         return props.close()
       })
       .catch((err) => {
-        console.log(err)
+        alert(err)
         setLoading(false)
         return props.close()});
   }
