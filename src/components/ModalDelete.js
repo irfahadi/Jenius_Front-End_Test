@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 
 export default function ModalDelete(props) {
-  console.log(props)
   const [Loading, setLoading] = useState(false)
 
   async function deleteCart() {
