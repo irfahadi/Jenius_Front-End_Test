@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { contactAdded, contactUpdated } from "../features/contact/contactSlices"
 
 export default function ModalAddUpdate(props) {
 const initForm = { id: null, 
@@ -35,52 +33,6 @@ if(e.target.name==='age'){
 }         
 setContact(updateChange)
 }
-
-async function addContact(){
-    return await axios({
-        data:{
-            firstName: Contact.firstName,
-            lastName: Contact.lastName,
-            age: Contact.age,
-            photo: 'N/A'
-        },
-        url: `https://cors-anywhere.herokuapp.com/https://simple-contact-crud.herokuapp.com/contact`,
-        method: "post",
-       
-    })
-      .then(()=>{
-            setLoading(false)
-            return props.fetchData()
-        })
-      .catch((err) => {
-            setLoading(false)
-            return console.error(err)
-        });
-  }
-
-  async function updateContact(){
-    return await axios({
-        data:{
-            firstName: Contact.firstName,
-            lastName: Contact.lastName,
-            age: Contact.age,
-            photo: Contact.photo
-        },
-        url: `https://cors-anywhere.herokuapp.com/https://simple-contact-crud.herokuapp.com/contact/${Contact.id}`,
-        method: "put",
-        
-    })
-    
-    .then(()=>{
-        setLoading(false)
-        return props.fetchData()
-    })
-    .catch((err) => {
-        setLoading(false)
-        return console.error(err)
-    });
-  }
-
 const handleOnSubmit = e => {
 setLoading(true)
 e.preventDefault();

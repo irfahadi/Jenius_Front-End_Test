@@ -1,13 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { contactDelete } from "../features/contact/contactSlices"
 
 
 export default function ModalDelete(props) {
   console.log(props)
   const [Loading, setLoading] = useState(false)
-  const dispatch = useDispatch()
 
   function deleteCart() {
     setLoading(true)
