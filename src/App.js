@@ -47,6 +47,7 @@ function App() {
           showModal={showModal}
           Contact={EditRow}
           setEditRow={setEditRow}
+          update = {()=>dispatch(fetchContact())}
         />
       ) : null}
     </div>

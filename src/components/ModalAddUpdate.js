@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { fetchContact } from '../features/contact/contactSlices';
 
 export default function ModalAddUpdate(props) {
 const initForm = { id: null, 
@@ -13,8 +11,6 @@ const initForm = { id: null,
 const [Contact, setContact] = useState(initForm);
 const [isedit, setisedit] = useState(false)
 const [Loading, setLoading] = useState(false)
-
-const dispatch = useDispatch()
 
 useEffect(() => {
 if(props.Contact !== null){
@@ -49,7 +45,7 @@ async function addContact(){
     })
       .then(()=>{
             setLoading(false)
-            return dispatch(fetchContact()) 
+            return props.update()
         })
       .catch((err) => {
             setLoading(false)
@@ -65,14 +61,14 @@ async function addContact(){
             age: Contact.age,
             photo: Contact.photo
         },
-        url: `https://simple-contact-crud.herokuapp.com/contact/${Contact.id}`,
+        url: `https://cors-anywhere.herokuapp.com/https://simple-contact-crud.herokuapp.com/contact/${Contact.id}`,
         method: "put",
         
     })
     
     .then(()=>{
         setLoading(false)
-        return dispatch(fetchContact())
+        return props.update()
     })
     .catch((err) => {
         setLoading(false)
