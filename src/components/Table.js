@@ -53,7 +53,7 @@ export default function Table(props) {
         )}
       </div>
 
-      <div className="bg-white dark:bg-dk-table flex flex-row text-center items-center rounded mb-2 py-2 px-10 md:px-20 xl:pl-48 xl:pr-40 text-gray-500 font-bold">
+      <div className="bg-white dark:bg-dk-table flex flex-row text-center items-center rounded mb-2 py-2 pl-10 pr-7 md:px-20 xl:pl-48 xl:pr-40 text-gray-500 font-bold">
         <div className="w-1/3"></div>
         <div className="w-1/3">First Name</div>
         <div className="w-1/3">Last Name</div>
@@ -62,7 +62,7 @@ export default function Table(props) {
       {Contact?.length>0?(
         Contact.map((x) => (
           <button
-            className="bg-white dark:bg-dk-table w-full flex flex-row justify-start items-center rounded px-10 md:px-24 xl:px-56 mb-1 focus:bg-table focus:text-white"
+            className="bg-white dark:bg-dk-table w-full flex flex-row justify-start items-center rounded pr-10 pl-5 md:px-24 xl:px-56 mb-1 focus:bg-table focus:text-white"
             onFocus={() => showMenu(x)}
             onBlur={closeMenu}
           >
@@ -73,7 +73,7 @@ export default function Table(props) {
             />
             <div className="w-1/3 pl-5  md:pl-16 xl:pl-20">{x.firstName}</div>
             <div className="w-1/3 pl-5 md:pl-16 xl:pl-28 ">{x.lastName}</div>
-            <div className="w-1/3 pl-1  md:pl-12 xl:pl-28">{x.age}</div>
+            <div className="w-1/3 pl-5  md:pl-12 xl:pl-28">{x.age}</div>
           </button>
         ))
       )

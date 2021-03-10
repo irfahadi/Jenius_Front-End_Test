@@ -37,7 +37,7 @@ async function addContact(){
             firstName: Contact.firstName,
             lastName: Contact.lastName,
             age: Contact.age,
-            photo: 'N/A'
+            photo: Contact.photo
         },
         url: `https://simple-contact-crud.herokuapp.com/contact`,
         method: "post",
