@@ -107,21 +107,10 @@ return (
         {/*content*/}
         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none dark:bg-dk-nav">
           {/*header*/}
-          <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
-            <h6 className="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase ">
+          <div className="flex items-start justify-between p-5 border-gray-300 rounded-t ">
+            <h6 className="text-gray-300 text-sm mt-3 mb-6 font-bold uppercase">
               Add Edit Contact
             </h6>
-            <button
-              onClick={() => {
-                props.showModal(false);
-                setContact(initForm);
-              }}
-              className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-            >
-              <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                ×
-              </span>
-            </button>
           </div>
           {/*body*/}
           <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
