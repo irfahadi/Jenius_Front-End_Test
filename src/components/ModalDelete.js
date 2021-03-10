@@ -27,8 +27,8 @@ export default function ModalDelete(props) {
 
   return (
     <div className="fixed inset-0 w-full h-full z-20 bg-black bg-opacity-50 duration-300 overflow-y-auto-auto pt-40">
-      <div className="bg-white rounded-lg w-full sm:w-2/3 lg:w-1/3 mx-auto">
-        <div className="w-98 border-t-8 border-btn-delete rounded-lg flex">
+      <div className="bg-white dark:bg-dk-nav rounded-lg w-full sm:w-2/3 lg:w-1/3 mx-auto">
+        <div className="w-98 border-t-8 border-btn-delete dark:border-dk-background rounded-lg flex">
           <div className="w-1/3 pt-6 flex justify-center">
             <img
               src={props.image==='N/A'?'foto.png':props.image}
@@ -41,8 +41,8 @@ export default function ModalDelete(props) {
             />
           </div>
           <div className="w-full pt-9 pr-4">
-            <h3 className="font-bold text-btn-delete">Delete {props.name}?</h3>
-            <p className="py-4 text-sm text-gray-400">
+            <h3 className="font-bold text-btn-delete dark:text-dk-background">Delete {props.name}?</h3>
+            <p className="py-4 text-sm text-gray-400 dark:text-white">
               Are you sure you want to delete Contact {props.name}?
             </p>
           </div>

@@ -102,10 +102,10 @@ const uploadPhoto = (e) =>
 
 return (
   <>
-    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
       <div className="relative w-auto my-6 mx-auto max-w-sm">
         {/*content*/}
-        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+        <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none dark:bg-dk-nav">
           {/*header*/}
           <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
             <h6 className="text-gray-500 text-sm mt-3 mb-6 font-bold uppercase ">
@@ -140,7 +140,7 @@ return (
                       type="text"
                       name="id"
                       value={Contact.id}
-                      className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-xs shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                      className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white dark:bg-dk-table rounded text-xs shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                     />
                   </div>
                 </div>
@@ -154,7 +154,7 @@ return (
                       name="firstName"
                       value={Contact.firstName}
                       onChange={handleOnChange}
-                      className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                      className="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 dark:bg-dk-table"
                     />
                   </div>
                 </div>
@@ -168,7 +168,7 @@ return (
                       name="lastName"
                       value={Contact.lastName}
                       onChange={handleOnChange}
-                      className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                      className="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 dark:bg-dk-table"
                     />
                   </div>
                 </div>
@@ -182,7 +182,7 @@ return (
                       name="age"
                       value={Contact.age}
                       onChange={handleOnChange}
-                      className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                      className="px-3 py-3 placeholder-gray-400 dark:bg-dk-table bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
                     />
                   </div>
                 </div>
@@ -193,7 +193,7 @@ return (
                     Photo
                   </label>
                   <div class="bg-grey-lighter">
-                    <label class=" flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
+                    <label class=" flex flex-col items-center px-4 py-6 bg-background dark:bg-dk-nav rounded-lg shadow-lg tracking-wide uppercase border cursor-pointer hover:text-white">
                       <svg
                         class="w-8 h-8"
                         fill="currentColor"
@@ -213,7 +213,7 @@ return (
               <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
                 <button
                   onClick={closeButton}
-                  className="text-red-500 background-transparent font-bold  px-10 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                  className="text-red-600 background-transparent font-bold  px-10 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button"
                 >
                   Close
