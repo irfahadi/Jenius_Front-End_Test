@@ -144,6 +144,7 @@ return (
                       value={Contact.firstName}
                       onChange={handleOnChange}
                       className="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 dark:bg-dk-table"
+                      required
                     />
                   </div>
                 </div>
@@ -158,6 +159,7 @@ return (
                       value={Contact.lastName}
                       onChange={handleOnChange}
                       className="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150 dark:bg-dk-table"
+                      required
                     />
                   </div>
                 </div>
@@ -172,6 +174,7 @@ return (
                       value={Contact.age}
                       onChange={handleOnChange}
                       className="px-3 py-3 placeholder-gray-400 dark:bg-dk-table bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
+                      min="1"
                     />
                   </div>
                 </div>
