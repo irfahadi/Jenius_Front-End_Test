@@ -30,14 +30,14 @@ export default function Table(props) {
               className="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left hover:bg-btn-edit hover:text-white mr-2 rounded-lg"
               type="button"
             >
-              Edit category
+              Edit Contact
             </button>
             <button
               onMouseDownCapture={() => setShowDelete(true)}
               className="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left hover:bg-btn-delete hover:text-white rounded-lg"
               type="button"
             >
-              Delete category
+              Delete Contact
             </button>
           </div>
         ) : (
@@ -53,7 +53,7 @@ export default function Table(props) {
         )}
       </div>
 
-      <div className="bg-white dark:bg-dk-table flex flex-row text-center items-center rounded mb-2 py-2 pl-10 pr-7 md:px-20 xl:pl-48 xl:pr-40 text-gray-500 font-bold">
+      <div className="bg-white dark:bg-dk-table flex flex-row text-center items-center  rounded mb-2 py-2 pl-10 pr-7 md:px-20 xl:pl-48 xl:pr-40 text-gray-500 font-bold">
         <div className="w-1/3"></div>
         <div className="w-1/3">First Name</div>
         <div className="w-1/3">Last Name</div>
